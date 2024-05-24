@@ -9,14 +9,8 @@ function App() {
     <>
       <Header />
       {notes.map((note) => {
-          return (
-            <Note
-              key={note.key}
-              header={note.title}
-              body={note.content}
-            />
-          );
-        })}
+        <Note key={note.key} header={note.title} body={note.content} />;
+      })}
       <Footer />
     </>
   );
