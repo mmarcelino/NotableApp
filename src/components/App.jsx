@@ -29,8 +29,8 @@ function App() {
         <Note
           key={i}
           id={i}
-          content={n.title}
-          title={n.content}
+          content={n.content}
+          title={n.title}
           onDelete={deleteNote}
         />
       ))}

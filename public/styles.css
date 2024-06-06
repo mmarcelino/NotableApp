@@ -8,6 +8,8 @@ html {
 }
 body {
   background: #eee;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+  /* background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png"); */
   padding: 0 16px;
 }
 
@@ -22,6 +24,10 @@ header h1 {
   color: #fff;
   font-family: "McLaren", cursive;
   font-weight: 200;
+}
+
+.icon {
+  width: 200px;
 }
 
 footer {
@@ -45,7 +51,7 @@ footer p {
   float: left;
 }
 .note h1 {
-  font-size: 1.1em;
+  font-size: 1.3em;
   margin-bottom: 6px;
 }
 .note p {
@@ -65,6 +71,7 @@ footer p {
   height: 36px;
   cursor: pointer;
   outline: none;
+  background: #fff;
 }
 
 form.create-note {
@@ -82,9 +89,14 @@ form.create-note textarea {
   border: none;
   padding: 4px;
   outline: none;
-  font-size: 1.2em;
   font-family: inherit;
   resize: none;
+}
+form.create-note input {
+  font-size: 1.3em;
+}
+form.create-note textarea {
+  font-size: 1em;
 }
 form.create-note button {
   position: absolute;
