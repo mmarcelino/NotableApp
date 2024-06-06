@@ -7,6 +7,10 @@ function Note(props) {
   function handleClick() {
     props.onDelete(props.id);
   }
+
+  function handleEdit() {
+    props.onEdit(props.id);
+  }
   
   return (
     <div className="note">
