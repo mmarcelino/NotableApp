@@ -26,6 +26,12 @@ header h1 {
   font-weight: 200;
 }
 
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Align items at the top */
+}
+
 .icon {
   width: 200px;
 }
@@ -46,7 +52,8 @@ footer p {
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
-  width: 240px;
+  flex: 20%; /* Initial width set to 20% */
+  max-width: calc(20% - 32px); /* Ensures width remains 20% - padding  */
   margin: 16px;
   float: left;
   /* transition: height 0.2s ease-out; */

@@ -12,7 +12,9 @@ function App() {
   }
 
   function deleteNote(id) {
-    setListOfNotes((prevItems) => prevItems.filter((item, index) => index !== id));
+    setListOfNotes((prevItems) =>
+      prevItems.filter((item, index) => index !== id)
+    );
   }
 
   function editNote(id, updatedNote) {
@@ -25,16 +27,18 @@ function App() {
     <div>
       <Header />
       <CreateArea onAdd={addNote} />
-      {listOfNotes.map((n, i) => (
-        <Note
-          key={i}
-          id={i}
-          content={n.content}
-          title={n.title}
-          onDelete={deleteNote}
-          onEdit={editNote}
-        />
-      ))}
+      <div className="main-content">
+        {listOfNotes.map((n, i) => (
+          <Note
+            key={i}
+            id={i}
+            content={n.content}
+            title={n.title}
+            onDelete={deleteNote}
+            onEdit={editNote}
+          />
+        ))}
+      </div>
       {/* <Footer /> */}
     </div>
   );

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useRef } from "react";
 // Icons
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -10,11 +11,18 @@ function Note(props) {
     title: props.title,
     content: props.content
   });
+
   const textareaRef = useRef(null);
+  const titleInputRef = useRef(null);  // Create a ref for the title input
 
   useEffect(() => {
-    if (isEditing && textareaRef.current) {
-      adjustTextareaHeight();
+    if (isEditing) {
+      if (textareaRef.current) {
+        adjustTextareaHeight();
+      }
+      if (titleInputRef.current) {
+        titleInputRef.current.focus();  // Focus the title input when entering edit mode
+      }
     }
   }, [isEditing]);
 
@@ -55,6 +63,7 @@ function Note(props) {
       {isEditing ? (
         <div>
           <input
+            ref={titleInputRef}  // Attach the ref to the title input
             name="title"
             onChange={handleChange}
             value={editedNote.title}
@@ -81,3 +90,4 @@ function Note(props) {
 }
 
 export default Note;
+
