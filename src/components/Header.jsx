@@ -1,6 +1,5 @@
 import React from "react";
 // Icons
-// import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 
 function Header() {

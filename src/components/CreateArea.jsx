@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 // Icons
 import AddIcon from "@mui/icons-material/Add";
 import { Fab } from "@mui/material";
@@ -6,6 +6,7 @@ import { Zoom } from "@mui/material";
 
 function CreateArea(props) {
   const [isExpanded, setExpanded] = useState(false);
+  const textareaRef = useRef(null);
 
   const [note, setNote] = useState({
     title: "",
@@ -21,6 +22,10 @@ function CreateArea(props) {
         [name]: value,
       };
     });
+
+    if (name === "content") {
+      adjustTextareaHeight();
+    }
   }
 
   function submitNote(event) {
@@ -36,6 +41,18 @@ function CreateArea(props) {
     setExpanded(true);
   }
 
+  function adjustTextareaHeight() {
+    const textarea = textareaRef.current;
+    if (textarea) {
+      textarea.style.height = "auto";
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
+  }
+
+  useEffect(() => {
+    adjustTextareaHeight();
+  }, [note.content]);
+
   return (
     <div>
       <form className="create-note">
@@ -46,16 +63,9 @@ function CreateArea(props) {
           value={note.title}
           placeholder="Note title goes here"
         />
-        {/* {isExapanded ? <textarea
-          name="content"
-          onChange={handleChange}
-          value={note.content}
-          placeholder="And its content here"
-          rows="3"
-        /> : null} */}
-        {/* SAME AS */}
         {isExpanded && (
           <textarea
+            ref={textareaRef}
             name="content"
             onChange={handleChange}
             value={note.content}
