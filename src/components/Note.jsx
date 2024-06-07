@@ -13,15 +13,13 @@ function Note(props) {
   });
 
   const textareaRef = useRef(null);
-  const titleInputRef = useRef(null);  // Create a ref for the title input
 
   useEffect(() => {
     if (isEditing) {
       if (textareaRef.current) {
+        textareaRef.current.focus(); 
+        textareaRef.current.setSelectionRange(textareaRef.current.value.length, textareaRef.current.value.length);
         adjustTextareaHeight();
-      }
-      if (titleInputRef.current) {
-        titleInputRef.current.focus();  // Focus the title input when entering edit mode
       }
     }
   }, [isEditing]);
@@ -63,7 +61,6 @@ function Note(props) {
       {isEditing ? (
         <div>
           <input
-            ref={titleInputRef}  // Attach the ref to the title input
             name="title"
             onChange={handleChange}
             value={editedNote.title}
