@@ -29,11 +29,15 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
-    props.onAdd(note);
-    setNote({
-      title: "",
-      content: "",
-    });
+    if (note.title.trim() === "" && note.content.trim() === "") {
+      alert("Your note is looking a bit empty. Add a title and some content before hitting the submit button!");
+    } else {
+      props.onAdd(note);
+      setNote({
+        title: "",
+        content: "",
+      });
+    }
     event.preventDefault();
   }
 
