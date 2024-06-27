@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 // Icons
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -9,7 +8,7 @@ function Note(props) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedNote, setEditedNote] = useState({
     title: props.title,
-    content: props.content
+    content: props.content,
   });
 
   const textareaRef = useRef(null);
@@ -17,8 +16,11 @@ function Note(props) {
   useEffect(() => {
     if (isEditing) {
       if (textareaRef.current) {
-        textareaRef.current.focus(); 
-        textareaRef.current.setSelectionRange(textareaRef.current.value.length, textareaRef.current.value.length);
+        textareaRef.current.focus();
+        textareaRef.current.setSelectionRange(
+          textareaRef.current.value.length,
+          textareaRef.current.value.length
+        );
         adjustTextareaHeight();
       }
     }
@@ -44,7 +46,7 @@ function Note(props) {
     const { name, value } = event.target;
     setEditedNote((prevNote) => ({
       ...prevNote,
-      [name]: value
+      [name]: value,
     }));
   }
 
@@ -72,15 +74,21 @@ function Note(props) {
             value={editedNote.content}
             rows="1"
           />
-          <button type="button" className="btn-done" onClick={handleSave}>Done</button>
+          <button type="button" className="btn-done" onClick={handleSave}>
+            Done
+          </button>
         </div>
       ) : (
         <div>
           <h1>{props.title}</h1>
           <p>{props.content}</p>
           <div className="buttons">
-            <button type="button" onClick={handleDelete}>Delete</button>
-            <button type="button" onClick={handleEdit}>Edit</button>
+            <button type="button" onClick={handleDelete}>
+              Delete
+            </button>
+            <button type="button" onClick={handleEdit}>
+              Edit
+            </button>
           </div>
         </div>
       )}
@@ -89,4 +97,3 @@ function Note(props) {
 }
 
 export default Note;
-

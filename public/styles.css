@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  background-color: #CFFF45;
+  background-color: #cfff45;
   margin: auto -16px;
   padding: 16px 32px;
   border-bottom: 1px solid black;
@@ -25,11 +25,11 @@ header h1 {
 .main-content {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start; 
+  align-items: flex-start;
 }
 
 .note {
-  background: #E5E5E5;
+  background: #e5e5e5;
   border-radius: 0.25rem;
   padding: 10px;
   flex: 20%; /* Initial width set to 20% */
@@ -52,14 +52,15 @@ header h1 {
   word-wrap: break-word;
 }
 
-.note input, .note textarea {
+.note input,
+.note textarea {
   width: 100%;
   border: none;
   outline: none;
   font-family: inherit;
   resize: none;
   color: #757575;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
 }
 
 .note input {
@@ -81,7 +82,7 @@ header h1 {
   border: none;
   cursor: pointer;
   outline: none;
-  background-color: #CFFF45;
+  background-color: #cfff45;
   border: 1px solid black;
   padding: 6px 8px;
 }
@@ -102,7 +103,7 @@ form.create-note {
   padding: 15px;
   border-radius: 0.25rem;
   border: 1px solid black;
-  box-shadow: 7px 7px 0px #CFFF45;
+  box-shadow: 7px 7px 0px #cfff45;
 }
 form.create-note input,
 form.create-note textarea {
@@ -134,8 +135,7 @@ form.create-note button {
   box-shadow: 1px 1px 10px lightgray;
 }
 
-
-@media screen and (max-width: 768px)  {
+@media screen and (max-width: 768px) {
   form.create-note {
     width: 90%;
   }
