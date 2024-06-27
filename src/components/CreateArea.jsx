@@ -7,6 +7,7 @@ import { Zoom } from "@mui/material";
 function CreateArea(props) {
   const [isExpanded, setExpanded] = useState(false);
   const textareaRef = useRef(null);
+  const titleRef = useRef(null);
 
   const [note, setNote] = useState({
     title: "",
@@ -57,6 +58,35 @@ function CreateArea(props) {
     adjustTextareaHeight();
   }, [note.content]);
 
+  useEffect(() => {
+    function handleKeyPress(event) {
+      if (event.key === "Enter") {
+        submitNote(event);
+      }
+    }
+
+    const textarea = textareaRef.current;
+    const titleInput = titleRef.current;
+
+    if (textarea) {
+      textarea.addEventListener("keypress", handleKeyPress);
+    }
+
+    if (titleInput) {
+      titleInput.addEventListener("keypress", handleKeyPress);
+    }
+
+    // Cleanup event listeners on unmount
+    return () => {
+      if (textarea) {
+        textarea.removeEventListener("keypress", handleKeyPress);
+      }
+      if (titleInput) {
+        titleInput.removeEventListener("keypress", handleKeyPress);
+      }
+    };
+  }, [note]);
+
   return (
     <div>
       <form className="create-note">
@@ -66,6 +96,7 @@ function CreateArea(props) {
           onChange={handleChange}
           value={note.title}
           placeholder="Note title goes here"
+          ref={titleRef}
         />
         {isExpanded && (
           <textarea
