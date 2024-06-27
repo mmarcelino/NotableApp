@@ -4,59 +4,48 @@
   box-sizing: border-box;
 }
 html {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 body {
-  background: #eee;
-  background-image: url("https://www.transparenttextures.com/patterns/food.png");
-  /* background-image: url("https://www.transparenttextures.com/patterns/inspiration-geometry.png"); */
+  /* background: #eee; */
   padding: 0 16px;
 }
 
 header {
-  background-color: #f5ba13;
+  background-color: #CFFF45;
   margin: auto -16px;
   padding: 16px 32px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid black;
+  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); */
 }
 
 header h1 {
-  color: #fff;
-  font-family: "McLaren", cursive;
-  font-weight: 200;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
 }
 
 .main-content {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start; /* Align items at the top */
+  align-items: flex-start; 
 }
 
 .icon {
   width: 200px;
 }
 
-footer {
-  position: absolute;
-  text-align: center;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-}
-
-footer p {
-  color: #ccc;
-}
 .note {
-  background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 2px 5px #ccc;
+  background: #E5E5E5;
+  /* border-radius: 7px; */
+  /* box-shadow: 0 2px 5px #ccc; */
   padding: 10px;
   flex: 20%; /* Initial width set to 20% */
   max-width: calc(20% - 32px); /* Ensures width remains 20% - padding  */
   margin: 16px;
   float: left;
+  border: 1px solid black;
   /* transition: height 0.2s ease-out; */
+  box-shadow: 2px 2px 0px black;
 }
 .note h1 {
   font-size: 1.3em;
@@ -93,13 +82,13 @@ footer p {
   position: relative;
   float: right;
   margin-right: 10px;
-  color: #f5ba13;
+  color: black;
   border: none;
   width: 36px;
   height: 36px;
   cursor: pointer;
   outline: none;
-  background: #fff;
+  background: #E5E5E5;
 }
 
 form.create-note {
@@ -108,8 +97,9 @@ form.create-note {
   margin: 30px auto 20px auto;
   background: #fff;
   padding: 15px;
-  border-radius: 7px;
-  box-shadow: 0 1px 5px rgb(138, 137, 137);
+  /* border-radius: 7px; */
+  border: 1px solid black;
+  box-shadow: 7px 7px 0px #CFFF45;
 }
 form.create-note input,
 form.create-note textarea {
@@ -130,7 +120,7 @@ form.create-note button {
   position: absolute;
   right: 18px;
   bottom: -18px;
-  background: #f5ba13;
+  background: black;
   color: #fff;
   border: none;
   border-radius: 50%;

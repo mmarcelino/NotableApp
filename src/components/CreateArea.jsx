@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-// Icons
+
 import AddIcon from "@mui/icons-material/Add";
 import { Fab } from "@mui/material";
 import { Zoom } from "@mui/material";
@@ -31,7 +31,9 @@ function CreateArea(props) {
 
   function submitNote(event) {
     if (note.title.trim() === "" && note.content.trim() === "") {
-      alert("Your note is looking a bit empty. Add a title and some content before hitting the submit button!");
+      alert(
+        "Your note is looking a bit empty. Add a title and some content before hitting the submit button!"
+      );
     } else {
       props.onAdd(note);
       setNote({
@@ -76,7 +78,6 @@ function CreateArea(props) {
       titleInput.addEventListener("keypress", handleKeyPress);
     }
 
-    // Cleanup event listeners on unmount
     return () => {
       if (textarea) {
         textarea.removeEventListener("keypress", handleKeyPress);
