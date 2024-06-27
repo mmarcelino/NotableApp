@@ -72,14 +72,16 @@ function Note(props) {
             value={editedNote.content}
             rows="1"
           />
-          <button type="button" onClick={handleSave}><CheckCircleIcon /></button>
+          <button type="button" className="btn-done" onClick={handleSave}>Done</button>
         </div>
       ) : (
         <div>
           <h1>{props.title}</h1>
           <p>{props.content}</p>
-          <button type="button" onClick={handleDelete}><DeleteIcon /></button>
-          <button type="button" onClick={handleEdit}><EditIcon /></button>
+          <div className="buttons">
+            <button type="button" onClick={handleDelete}>Delete</button>
+            <button type="button" onClick={handleEdit}>Edit</button>
+          </div>
         </div>
       )}
     </div>

@@ -7,7 +7,6 @@ html {
   font-family: "Poppins", sans-serif;
 }
 body {
-  /* background: #eee; */
   padding: 0 16px;
 }
 
@@ -16,7 +15,6 @@ header {
   margin: auto -16px;
   padding: 16px 32px;
   border-bottom: 1px solid black;
-  /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3); */
 }
 
 header h1 {
@@ -30,22 +28,18 @@ header h1 {
   align-items: flex-start; 
 }
 
-.icon {
-  width: 200px;
-}
-
 .note {
   background: #E5E5E5;
-  /* border-radius: 7px; */
-  /* box-shadow: 0 2px 5px #ccc; */
+  border-radius: 0.25rem;
   padding: 10px;
   flex: 20%; /* Initial width set to 20% */
-  max-width: calc(20% - 32px); /* Ensures width remains 20% - padding  */
+  max-width: calc(20% - 32px);
   margin: 16px;
   float: left;
   border: 1px solid black;
-  /* transition: height 0.2s ease-out; */
   box-shadow: 2px 2px 0px black;
+  min-height: 100px;
+  /* position: relative; */
 }
 .note h1 {
   font-size: 1.3em;
@@ -61,11 +55,11 @@ header h1 {
 .note input, .note textarea {
   width: 100%;
   border: none;
-  /* padding: 4px; */
   outline: none;
   font-family: inherit;
   resize: none;
   color: #757575;
+  background-color: #E5E5E5;
 }
 
 .note input {
@@ -78,26 +72,35 @@ header h1 {
   margin-bottom: 6px;
 }
 
-.note button {
-  position: relative;
+.note .buttons {
   float: right;
-  margin-right: 10px;
+}
+
+.note button {
   color: black;
   border: none;
-  width: 36px;
-  height: 36px;
   cursor: pointer;
   outline: none;
-  background: #E5E5E5;
+  background-color: #CFFF45;
+  border: 1px solid black;
+  padding: 6px 8px;
+}
+
+.btn-done {
+  float: right;
+}
+
+.note button:nth-of-type(2) {
+  margin-left: 10px;
 }
 
 form.create-note {
   position: relative;
-  width: 480px;
+  width: 35%;
   margin: 30px auto 20px auto;
   background: #fff;
   padding: 15px;
-  /* border-radius: 7px; */
+  border-radius: 0.25rem;
   border: 1px solid black;
   box-shadow: 7px 7px 0px #CFFF45;
 }
@@ -119,14 +122,32 @@ form.create-note textarea {
 form.create-note button {
   position: absolute;
   right: 18px;
-  bottom: -18px;
+  bottom: 18px;
   background: black;
+  border-radius: 0px;
   color: #fff;
   border: none;
-  border-radius: 50%;
   width: 36px;
   height: 36px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+  box-shadow: 1px 1px 10px lightgray;
+}
+
+
+@media screen and (max-width: 768px)  {
+  form.create-note {
+    width: 90%;
+  }
+
+  .main-content {
+    display: block;
+    width: 100%;
+  }
+
+  .note {
+    max-width: 90%;
+    margin: 0px auto;
+    float: none;
+  }
 }
