@@ -10,6 +10,11 @@ body {
   padding: 0 16px;
 }
 
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
 header {
   background-color: #cfff45;
   margin: auto -16px;

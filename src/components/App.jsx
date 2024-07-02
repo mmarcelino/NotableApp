@@ -26,7 +26,7 @@ function App() {
     <div>
       <Header />
       <CreateArea onAdd={addNote} />
-      <div className="main-content">
+      <div className="main-content container">
         {listOfNotes.map((n, i) => (
           <Note
             key={i}
