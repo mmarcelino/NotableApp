@@ -38,8 +38,8 @@ header h1 {
   float: left;
   border: 1px solid black;
   box-shadow: 2px 2px 0px black;
-  min-height: 100px;
-  /* position: relative; */
+  min-height: 150px;
+  position: relative;
 }
 .note h1 {
   font-size: 1.3em;
@@ -73,8 +73,11 @@ header h1 {
   margin-bottom: 6px;
 }
 
-.note .buttons {
-  float: right;
+.note .buttons, .btn-done {
+  /* float: right; */
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
 }
 
 .note button {
@@ -87,9 +90,11 @@ header h1 {
   padding: 6px 8px;
 }
 
-.btn-done {
-  float: right;
-}
+/* .btn-done {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+} */
 
 .note button:nth-of-type(2) {
   margin-left: 10px;
