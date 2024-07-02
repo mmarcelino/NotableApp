@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Notable - Let your ideas flow</title>
+    <script>
+      document.addEventListener('visibilitychange', function() {
+          if (document.hidden) {
+              document.title = "Peek back at your notes!";
+          } else {
+              document.title = "Notable - Let your ideas flow";
+          }
+      });
+    </script>
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
